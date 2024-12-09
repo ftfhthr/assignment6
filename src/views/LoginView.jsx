@@ -17,6 +17,7 @@ const LoginView = () => {
         } else {
             alert("Wrong Password!");
         }
+        setEmail(e.target.email.value);
     }
 
     return (
@@ -25,7 +26,7 @@ const LoginView = () => {
             <div className="form-container">
                 <form onSubmit={(e) => { login(e) }}>
                     <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" onChange={(event) => { setEmail(event.target.value) }} required />
+                    <input type="email" name="email" required />
                     <label htmlFor="password">Password:</label>
                     <input type="password" name="password" value={pass} onChange={(event) => { setPass(event.target.value) }} required />
                     <input type="submit" value={"Log In"} required />

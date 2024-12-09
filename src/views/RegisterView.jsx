@@ -33,7 +33,7 @@ const RegisterView = (props) => {
                     <label htmlFor="reenter-pass">Re-enter Password:</label>
                     <input type="password" id="reenter-pass" value={pass2} onChange={(event) => { setPass2(event.target.value) }} required />
                     {props.genresList.map((genre) => (
-                        <div className="genre-checkbox">
+                        <div key={genre.id} className="genre-checkbox">
                             <input type="checkbox" id={genre.genre} />
                             <label htmlFor={genre.genre}>{genre.genre}</label>
                         </div>

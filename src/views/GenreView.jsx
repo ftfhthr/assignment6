@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import "./GenreView.css"
 
 const GenreView = () => {
@@ -9,6 +9,8 @@ const GenreView = () => {
     const [page, setPage] = useState(1);
     const [done, setDone] = useState(false);
     const params = useParams();
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const getMovies = async () => {
         const movies = await axios.get(`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${params.genre_id}&api_key=${import.meta.env.VITE_TMDB_KEY}`);
@@ -45,12 +47,12 @@ const GenreView = () => {
 
     useEffect(() => {
         getMovies();
-    }, [done]);
+    }, [done, location]);
 
     return (
         <div className="genre-view">
             {movieData.map((movie) => (
-                <a key={movie.id} href={`/movies/details/${movie.id}`}>
+                <a key={movie.id} onClick={() => navigate(`/movies/details/${movie.id}`)}>
                     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
                 </a>
             ))}
