@@ -7,6 +7,7 @@ import MoviesView from "./views/MoviesView.jsx"
 import GenreView from "./views/GenreView.jsx"
 import DetailView from "./views/DetailView.jsx"
 import CartView from "./views/CartView.jsx"
+import SettingsView from "./views/SettingsView.jsx"
 import './App.css'
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
 						<Route path="details/:id" element={<DetailView />} />
 					</Route>
 					<Route path="/cart" element={<CartView />} />
+					<Route path="/settings" element={<SettingsView />} />
 				</Routes>
 			</BrowserRouter>
 		</StoreProvider>
