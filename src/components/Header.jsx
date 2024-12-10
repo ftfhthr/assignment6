@@ -15,13 +15,13 @@ const Header = () => {
                     <a href="/register">Sign Up</a>
                 </>
             )
-        }
-    }
-
-    const cart = () => {
-        if (email != "") {
+        } else {
             return (
-                <button onClick={() => navigate("/cart")}>Cart</button>
+                <>
+                    <button onClick={() => navigate("/cart")}>Cart</button>
+                    <button onClick={() => navigate("/settings")}>Settings</button>
+                    <a href="/">Log Out</a>
+                </>
             )
         }
     }
@@ -33,7 +33,6 @@ const Header = () => {
             </a>
             <div className="navbar-container">
                 {loginButtons()}
-                {cart()}
             </div>
         </div>
     );

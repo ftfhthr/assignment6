@@ -14,43 +14,53 @@ function App() {
 	const genresList = [
         {
             genre: "Action",
-            id: 28
+            id: 28,
+            checked: false
         },
         {
             genre: "Family",
-            id: 10751
+            id: 10751,
+            checked: false
         },
         {
             genre: "Science Fiction",
-            id: 878
+            id: 878,
+            checked: false
         },
         {
             genre: "Adventure",
-            id: 12
+            id: 12,
+            checked: false
         },
         {
             genre: "Fantasy",
-            id: 14
+            id: 14,
+            checked: false
         },
         {
             genre: "War",
-            id: 10752
+            id: 10752,
+            checked: false
         },
         {
             genre: "Animation",
-            id: 16
+            id: 16,
+            checked: false
         },
         {
             genre: "History",
-            id: 36
+            id: 36,
+            checked: false
         },
         {
             genre: "Thriller",
-            id: 53
+            id: 53,
+            checked: false
         },
         {
             genre: "Comedy",
-            id: 35
+            id: 35,
+            checked: false
         }
     ]
 
@@ -66,7 +76,7 @@ function App() {
 						<Route path="details/:id" element={<DetailView />} />
 					</Route>
 					<Route path="/cart" element={<CartView />} />
-					<Route path="/settings" element={<SettingsView />} />
+					<Route path="/settings" element={<SettingsView genresList={genresList} />} />
 				</Routes>
 			</BrowserRouter>
 		</StoreProvider>
