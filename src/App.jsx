@@ -70,13 +70,13 @@ function App() {
 				<Routes>
 					<Route path="/" element={<HomeView />} />
 					<Route path="/login" element={<LoginView />} />
-					<Route path="/register" element={<RegisterView genresList={genresList} />} />
-					<Route path="/movies" element={<MoviesView genresList={genresList} />}>
+					<Route path="/register" element={<RegisterView />} />
+					<Route path="/movies" element={<MoviesView />}>
 						<Route path="genre/:genre_id" element={<GenreView />} />
 						<Route path="details/:id" element={<DetailView />} />
 					</Route>
 					<Route path="/cart" element={<CartView />} />
-					<Route path="/settings" element={<SettingsView genresList={genresList} />} />
+					<Route path="/settings" element={<SettingsView />} />
 				</Routes>
 			</BrowserRouter>
 		</StoreProvider>

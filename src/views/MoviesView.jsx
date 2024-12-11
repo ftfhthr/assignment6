@@ -4,12 +4,12 @@ import Footer from "../components/Footer.jsx"
 import Genres from "../components/Genres.jsx"
 import "./MoviesView.css"
 
-const MoviesView = (props) => {
+const MoviesView = () => {
     return (
         <div>
             <Header />
             <div className="movies-view">
-                <Genres genresList={props.genresList}/>
+                <Genres />
                 <Outlet />
             </div>
             <Footer />

@@ -24,7 +24,7 @@ const LoginView = () => {
         <div>
             <Header />
             <div className="form-container">
-                <form onSubmit={(e) => { login(e) }}>
+                <form className="form" onSubmit={(e) => { login(e) }}>
                     <label htmlFor="email">Email:</label>
                     <input type="email" name="email" required />
                     <label htmlFor="password">Password:</label>
