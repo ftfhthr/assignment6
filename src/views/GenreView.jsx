@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import axios from "axios"
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import "./GenreView.css"
+import { useStoreContext } from "../context";
 
 const GenreView = () => {
     const [movieData, setMovieData] = useState([]);
     const [totalPages, setTotalPages] = useState(0);
     const [page, setPage] = useState(1);
     const [done, setDone] = useState(false);
+    const { cart, setCart } = useStoreContext();
     const params = useParams();
     const navigate = useNavigate();
     const location = useLocation();
@@ -51,17 +53,22 @@ const GenreView = () => {
 
     return (
         <div className="genre-view">
-            {movieData.map((movie) => (
-                <a key={movie.id} onClick={() => navigate(`/movies/details/${movie.id}`)}>
-                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
-                </a>
-            ))}
+            <div className="movies">
+                {movieData.map((movie) => (
+                    <div className="movie">
+                        <a key={movie.id} onClick={() => navigate(`/movies/details/${movie.id}`)}>
+                            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
+                        </a>
+                        <button className="buy-button" onClick={() => setCart((prevCart) => prevCart.set(movie.id, { title: movie.original_title, url: movieData.poster_path }))}>Buy</button>
+                    </div>
+                ))}
+            </div>
             <div>
-                <button type="submit" onClick={() => setCurrentPage(1)}>1</button>
-                <button type="submit" onClick={() => movePage(-1)}>{"<"}</button>
+                <button className="page-button" type="submit" onClick={() => setCurrentPage(1)}>1</button>
+                <button className="page-button" type="submit" onClick={() => movePage(-1)}>{"<"}</button>
                 <span>{page}</span>
-                <button type="submit" onClick={() => movePage(1)}>{">"}</button>
-                <button type="submit" onClick={() => setCurrentPage(totalPages)}>{totalPages}</button>
+                <button className="page-button" type="submit" onClick={() => movePage(1)}>{">"}</button>
+                <button className="page-button" type="submit" onClick={() => setCurrentPage(totalPages)}>{totalPages}</button>
             </div>
         </div>
     )

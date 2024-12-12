@@ -11,7 +11,7 @@ export const StoreProvider = ({ children }) => {
         {
             genre: "Action",
             id: 28,
-            checked: false
+            checked: true
         },
         {
             genre: "Family",
@@ -21,7 +21,7 @@ export const StoreProvider = ({ children }) => {
         {
             genre: "Science Fiction",
             id: 878,
-            checked: false
+            checked: true
         },
         {
             genre: "Adventure",

@@ -3,7 +3,7 @@
     height: 300px;
 }
 
-.genre-view button {
+.genre-view .page-button {
     width: 40px;
     height: 40px;
     border-radius: 100%;
@@ -11,4 +11,18 @@
     background-color: red;
     margin: 10px;
     font-weight: 900;
+}
+
+.movie {
+    width: 200px;
+    margin: 20px;
+}
+
+.genre-view {
+    width: 100%;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
