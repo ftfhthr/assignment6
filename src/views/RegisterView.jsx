@@ -15,12 +15,17 @@ const RegisterView = () => {
     var checkedGenres = JSON.parse(JSON.stringify(genres));
 
     const checkGenres = () => {
+        var genresSelected = 0;
         for (var genre of genres) {
             if (genre.checked) {
-                return true;
+                genresSelected++;
             }
         }
-        return false;
+        if (genresSelected < 10) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     const createAccount = (e) => {
@@ -28,7 +33,7 @@ const RegisterView = () => {
         if (pass1 != pass2) {
             alert("Passwords don't match!");
         } else if (!checkGenres()) {
-            alert("Choose at least 1 genre!")
+            alert("Choose at least 10 genres!")
         } else {
             setFirstName(e.target.firstname.value);
             setLastName(e.target.lastname.value);

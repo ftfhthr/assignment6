@@ -13,18 +13,24 @@ const SettingsView = () => {
     var checkedGenres = JSON.parse(JSON.stringify(genres));
 
     const checkGenres = () => {
+        var genresSelected = 0;
         for (var genre of checkedGenres) {
             if (genre.checked) {
-                return true;
+                genresSelected += 1;
             }
         }
-        return false;
+        if (genresSelected < 10) {
+            return false;
+        } else {
+            return true;
+        }
     }
+
 
     const updateSettings = (e) => {
         e.preventDefault();
         if (!checkGenres()) {
-            alert("Choose at least 1 genre!");
+            alert("Choose at least 10 genres!");
         } else {
             setFirstName(e.target.firstname.value);
             setLastName(e.target.lastname.value);

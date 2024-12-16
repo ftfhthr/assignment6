@@ -14,6 +14,11 @@ export const StoreProvider = ({ children }) => {
             checked: false
         },
         {
+            genre: "Crime",
+            id: 80,
+            checked: false
+        },
+        {
             genre: "Family",
             id: 10751,
             checked: false
