@@ -8,7 +8,7 @@ const DetailView = () => {
 	const [videos, setVideos] = useState([]);
 	const [trailers, setTrailers] = useState([]);
 	const [done, setDone] = useState(false);
-	
+
 	const params = useParams();
 
 	const getMovieData = async () => {
@@ -33,7 +33,7 @@ const DetailView = () => {
 	return (
 		<div className="detail-view">
 			<h2>{movieData.title}</h2>
-			
+
 			<div>
 				<h3>Original Title:</h3>
 				<p>{movieData.original_title}</p>

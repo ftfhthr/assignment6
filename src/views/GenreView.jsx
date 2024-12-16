@@ -67,7 +67,7 @@ const GenreView = () => {
                         <a onClick={() => navigate(`/movies/details/${movie.id}`)}>
                             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
                         </a>
-                        <button className="buy-button" onClick={() => setCart((prevCart) => prevCart.set(movie.id, { title: movie.original_title, url: `https://image.tmdb.org/t/p/w500${movie.poster_path}` }))}>{setBuyText(cart.has(movie.id))}</button>
+                        <button className="buy-button" onClick={() => setCart((prevCart) => prevCart.set(movie.id, { title: movie.title, url: `https://image.tmdb.org/t/p/w500${movie.poster_path}` }))}>{setBuyText(cart.has(movie.id))}</button>
                     </div>
                 ))}
             </div>

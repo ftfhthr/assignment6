@@ -7,9 +7,9 @@ import { useStoreContext } from "../context/index.jsx";
 const RegisterView = () => {
     const [pass1, setPass1] = useState("");
     const [pass2, setPass2] = useState("");
-    const {email, setEmail} = useStoreContext();
-    const {firstName, setFirstName} = useStoreContext();
-    const {lastName, setLastName} = useStoreContext();
+    const { setEmail } = useStoreContext();
+    const { setFirstName } = useStoreContext();
+    const { setLastName } = useStoreContext();
     const { genres, setGenres } = useStoreContext();
     const navigate = useNavigate();
     var checkedGenres = JSON.parse(JSON.stringify(genres));
@@ -36,18 +36,14 @@ const RegisterView = () => {
             navigate("/movies");
         }
     }
-    
+
     const setCheckedGenres = (e) => {
         checkedGenres = JSON.parse(JSON.stringify(genres));
-        if (e.target.checked) {
-            for (var i = 0; i < genres.length; i++) {
-                if (e.target.id == genres[i].id) {
+        for (var i = 0; i < genres.length; i++) {
+            if (e.target.id == genres[i].id) {
+                if (e.target.checked) {
                     checkedGenres[i].checked = true;
-                }
-            }
-        } else {
-            for (var i = 0; i < genres.length; i++) {
-                if (e.target.id == genres[i].id) {
+                } else {
                     checkedGenres[i].checked = false;
                 }
             }
