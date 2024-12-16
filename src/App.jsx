@@ -11,59 +11,6 @@ import SettingsView from "./views/SettingsView.jsx"
 import './App.css'
 
 function App() {
-	const genresList = [
-        {
-            genre: "Action",
-            id: 28,
-            checked: false
-        },
-        {
-            genre: "Family",
-            id: 10751,
-            checked: false
-        },
-        {
-            genre: "Science Fiction",
-            id: 878,
-            checked: false
-        },
-        {
-            genre: "Adventure",
-            id: 12,
-            checked: false
-        },
-        {
-            genre: "Fantasy",
-            id: 14,
-            checked: false
-        },
-        {
-            genre: "War",
-            id: 10752,
-            checked: false
-        },
-        {
-            genre: "Animation",
-            id: 16,
-            checked: false
-        },
-        {
-            genre: "History",
-            id: 36,
-            checked: false
-        },
-        {
-            genre: "Thriller",
-            id: 53,
-            checked: false
-        },
-        {
-            genre: "Comedy",
-            id: 35,
-            checked: false
-        }
-    ]
-
 	return (
 		<StoreProvider>
 			<BrowserRouter>
