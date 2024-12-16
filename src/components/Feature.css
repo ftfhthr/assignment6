@@ -13,7 +13,7 @@
     width: 360px;
 }
 
-.movies {
+.feature .movies {
     width: 100%;
     display: flex;
     justify-content: space-between;

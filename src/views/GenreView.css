@@ -13,7 +13,7 @@
     font-weight: 900;
 }
 
-.movie {
+.genre-view .movie {
     width: 200px;
     margin: 20px;
 }
@@ -22,7 +22,7 @@
     width: 100%;
 }
 
-.movies {
+.genre-view .movies {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }

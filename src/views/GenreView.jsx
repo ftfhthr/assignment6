@@ -47,6 +47,14 @@ const GenreView = () => {
         getMovies();
     }
 
+    const setBuyText = (inCart) => {
+        if (inCart) {
+            return "Added";
+        } else {
+            return "Buy";
+        }
+    }
+
     useEffect(() => {
         getMovies();
     }, [done, location]);
@@ -55,11 +63,11 @@ const GenreView = () => {
         <div className="genre-view">
             <div className="movies">
                 {movieData.map((movie) => (
-                    <div className="movie">
-                        <a key={movie.id} onClick={() => navigate(`/movies/details/${movie.id}`)}>
+                    <div className="movie" key={movie.id}>
+                        <a onClick={() => navigate(`/movies/details/${movie.id}`)}>
                             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
                         </a>
-                        <button className="buy-button" onClick={() => setCart((prevCart) => prevCart.set(movie.id, { title: movie.original_title, url: movieData.poster_path }))}>Buy</button>
+                        <button className="buy-button" onClick={() => setCart((prevCart) => prevCart.set(movie.id, { title: movie.original_title, url: `https://image.tmdb.org/t/p/w500${movie.poster_path}` }))}>{setBuyText(cart.has(movie.id))}</button>
                     </div>
                 ))}
             </div>
